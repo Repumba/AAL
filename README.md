@@ -1,68 +1,67 @@
-Aby wygenerowac testy nalezy wykonac skrypt gen.sh poleceniem:
+Aby wygenerować testy należy wykonać skrypt gen.sh poleceniem:
 
 	sh gen.sh
 
 gen.sh przyjmuje 2 lub 3 argumenty
 
-argument 1: liczba testow - liczba calkowita
+argument 1: liczba testów - liczba całkowita
 
-argument 2: rodzaj testu - liczba calkowita
+argument 2: rodzaj testu - liczba całkowita
 
-1 - pracownicy przychodza w odstepach wiekszych niz t, a dokladnie co t+1 czasu
+1 - pracownicy przychodza w odstępach większych niż t, a dokładnie co t+1 czasu
 
-2 - w czasie t do kuchni przychodzi maksymalnie m pracownikow
+2 - w czasie t do kuchni przychodzi maksymalnie m pracowników
 
-3 - w czasie t do kuchni przychodzi m+10 pracownikow
+3 - w czasie t do kuchni przychodzi m+10 pracowników
 
 4 - test maksymalny
 
-5 - test losowy z zadana liczba pracownikow (wymaga podania 3 argumentow)
+5 - test losowy z zadaną liczba pracowników (wymaga podania 3 argumentów)
 
-6 - calkowicie losowy test
+6 - całkowicie losowy test
 
-argument 3: liczba pracownikow, tylko gdy rodzaj testu 5
+argument 3: liczba pracowników, tylko gdy rodzaj testu 5
 
-Przyklad:
+Przykład:
 
 	sh gen.sh 5 1
 	
-Wykona 5 testow rodzaju 1
+Wykona 5 testów rodzaju 1
 
 	sh gen.sh 6 5 4
 	
-Wykona 6 testow rodzaju 5, w kazdym tescie bedzie po 4 pracownikow
+Wykona 6 testów rodzaju 5, w każdym teście będzie po 4 pracowników
 
-Aby uruchomic program na testach nalezy uruchomic skrypt run.sh poleceniem:
+Aby uruchomić program na testach należy uruchomić skrypt run.sh poleceniem:
 
 	sh run.sh
 
-run.sh przyjmuje 1 argument -> liczbe testow, liczba calkowita
+run.sh przyjmuje 1 argument -> liczbę testów, liczba całkowita
 
-Przyklad:
+Przykład:
 
 	sh run.sh 10
 
 Program wykona testy dla i od 1 do 10
 
-Wszystkie testy mozna obejrzec i zweryfikowac poprawnosc rozwiazania.
+Wszystkie testy można obejrzeć i zweryfikować poprawność rozwiązania.
 
-test*.in	dane wejsciowe i-tego testu
+test*.in	dane wejściowe i-tego testu
 
-test*.out	dane wyjsciowe z programu dla i-tego testu
+test*.out	dane wyjściowe z programu dla i-tego testu
 
-Do pomiaru czasu polecam uzyc takiej skladni:
+Do pomiaru czasu polecam użyć funkcji time:
 
 	time sh run.sh X
 
-Pomiar czasu dla X testow
+Pomiar czasu dla X testów
 
-Aby skompilowac programy uzyj:
+Aby skompilować programy należy użyć:
 
 	make
 
-Aby usunac pliki testowe uzyj:
+Aby usunąć pliki testowe należy użyć:
 
 	make clean
 
--Tomek
-
+-Tomek Trzeciak

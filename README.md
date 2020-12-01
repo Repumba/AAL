@@ -18,8 +18,10 @@ argument 3: liczba pracownikow, tylko gdy rodzaj testu 5
 
 Przyklad:
 	sh gen.sh 5 1
+	
 Wykona 5 testow rodzaju 1
 	sh gen.sh 6 5 4
+	
 Wykona 6 testow rodzaju 5, w kazdym tescie bedzie po 4 pracownikow
 
 Aby uruchomic program na testach nalezy uruchomic skrypt run.sh poleceniem:

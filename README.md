@@ -1,5 +1,7 @@
 Aby wygenerowac testy nalezy wykonac skrypt gen.sh poleceniem:
+
 	sh gen.sh
+
 gen.sh przyjmuje 2 lub 3 argumenty
 
 argument 1: liczba testow - liczba calkowita

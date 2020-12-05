@@ -1,5 +1,5 @@
 make:
-	g++ main.cpp -o main.e
-	g++ gen.cpp -o gen.e
+	g++ main.cpp cli.cpp mainAlgorithm.cpp -o main.e
+
 clean:
-	rm test*
+	rm main.e

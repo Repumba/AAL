@@ -72,7 +72,7 @@ Aby usunąć pliki testowe należy użyć:
 # Uruchomienie na wielu instancjach problemu
 Do generacji wielu instancji problemu należy użyć pliku *generator.py*. Przykład uruchomienia
 ```
-	python generator.py
+python generator.py
 ```
 
 Po wykonaniu się skryptu (może to zająć kilka minut) wygenerowane zostaną instancje problemu dla różnych kombinacji parametrów wejściowych: 
@@ -84,9 +84,9 @@ Po wykonaniu się skryptu (może to zająć kilka minut) wygenerowane zostaną i
 
 Uruchomienie algorytmu do przetestowania wszystkich instancji problemu odbywa się w następujący sposób:
 ```
-	python tester.py
+python tester.py
 ```
 
 Rezultat testu wydajności znajduje się w pliku *results.csv*.
 
- - Anton Masiukevich
+Anton Masiukevich

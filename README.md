@@ -1,3 +1,5 @@
+### Instrukcja do pojedyńczego uruchomienia
+
 Aby wygenerować testy należy wykonać skrypt gen.sh poleceniem:
 
 	sh gen.sh
@@ -65,3 +67,22 @@ Aby usunąć pliki testowe należy użyć:
 	make clean
 
 -Tomek Trzeciak
+
+
+# Uruchomienie na wielu instancjach problemu
+Do generacji wielu instancji problemu należy użyć pliku *generator.py*. Przykład uruchomienia
+```python generator.py```
+
+Po wykonaniu się skryptu (może to zająć kilka minut) wygenerowane zostaną instancje problemu dla różnych kombinacji parametrów wejściowych: 
+* liczby pracowników
+* pojemności mikrofalówki
+* czasu podgrzania się pojedyńczego kawałka pizzy
+* typu rozkładu momentów przyjścia pracownik oraz rozkładu prawdopodobieństwa przyjścia pracowników do kuchni
+* samych momentów czasowych przyjścia pracowników do kuchni
+
+Uruchomienie algorytmu do przetestowania wszystkich instancji problemu odbywa się w następujący sposób:
+``` python tester.py ```
+
+Rezultat testu wydajności znajduje się w pliku *results.csv*.
+
+- Anton Masiukevich

@@ -1,5 +1,5 @@
 #include <cassert>
-#include "mainAlgorithm.h"
+#include "../include/mainAlgorithm.h"
 
 using namespace std;
 

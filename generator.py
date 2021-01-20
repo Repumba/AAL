@@ -6,12 +6,12 @@ import argparse
 
 parser = argparse.ArgumentParser(description='list of the contents of the folder')
 
-parser.add_argument('-n', '--nWorkers', action='store', default=[1000, 10000, 100000, 200000, 500000, 1000000], help='Number of workers')
-parser.add_argument('-m', '--mCapacity', action='store', default=[2, 10], help='Capacity of the microwave')
-parser.add_argument('-t', '--cookTime', action='store', default=[2, 10, 100], help='Unit time cooking')
-parser.add_argument('-k','--kTests', action='store', default=3, help='Number of tests per instance')
-parser.add_argument('-l', '--lambdas', action='store', default=[10, 100, 1000], help='Lambda values for Poisson distribution')
-parser.add_argument('-d', '--disctibution', action='store', default=['poisson'], help='Distribution of coming moments [poisson, uniform]')
+parser.add_argument('-n', '--nWorkers', action='store', nargs="+", type=int, default=[1000, 10000, 100000, 200000, 500000, 1000000], help='Number of workers')
+parser.add_argument('-m', '--mCapacity', action='store', nargs="+", type=int, default=[2, 10], help='Capacity of the microwave')
+parser.add_argument('-t', '--cookTime', action='store', nargs="+", type=int, default=[2, 10, 100], help='Unit time cooking')
+parser.add_argument('-k','--kTests', action='store', nargs="+", type=int, default=3, help='Number of tests per instance')
+parser.add_argument('-l', '--lambdas', action='store', nargs="+", type=int, default=[10, 100, 1000], help='Lambda values for Poisson distribution')
+parser.add_argument('-d', '--disctibution', action='store', nargs="+", type=int, default=['poisson'], help='Distribution of coming moments [poisson, uniform]')
 
 args = parser.parse_args()
 

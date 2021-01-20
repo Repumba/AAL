@@ -26,7 +26,22 @@ Aby zmierzyć czas wykonania algorytmu należy uruchomić go z następującymi f
 
 ## Instrukcja obsługi generatora danych wejściowych `generator.py`
 
-Aby wyświetlić opcje z jakimi można generować rozwiązania należy wpisać 
+Przykład generowania kombinacji testów dla parametrów
+* liczby pracowników ze zbioru [1000, 20000, 500000]
+* pojemności mikrofalówki ze zbioru [2, 10, 100]
+* czasów podgrzewania ze zbioru [10, 20, 50]
+* liczby testów dla jednej kombinacji parametrów: 3
+* typu rozkładu momentów przyjścia pracowników: poisson
+* parametrów rozkłądu Poissona ze zbioru [3, 4]
+
+jest podany poniżej
+
+```
+python generator.py -n 1000 20000 500000 -m 2 10 100 -t 10 20 50 -k 3 -d poisson -l 3 4
+```
+
+
+Szczegóły dotyczące parametrów CLI generatora można wyświetlić za pomocą komendy
 ```
 python generator.py --help
 ```

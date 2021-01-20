@@ -22,7 +22,7 @@ Aby zmierzyć czas wykonania algorytmu należy uruchomić go z następującymi f
 ```
 ./main.e -m time_test -f filename.txt
 ```
-
+Ze względu na strukturę programu kolejność parametrów wejściowych jest istotna
 
 ## Instrukcja obsługi generatora danych wejściowych `generator.py`
 

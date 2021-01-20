@@ -1,5 +1,5 @@
 make:
-	g++ main.cpp -o main.e
-	g++ gen.cpp -o gen.e
+	g++ main.cpp src/cli.cpp src/mainAlgorithm.cpp src/MeasureTime.cpp -o main.e -w
+
 clean:
-	rm test*
+	rm main.e

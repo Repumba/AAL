@@ -36,27 +36,14 @@ int main(int argc, char* argv[]) {
     cli->setTotalTimeWait(solver->getTotalWaitingTime());
 
     mt->stopClock();
+    
+    cli->printTotalTimeWait();
+    cli->printFeedingTimestamps();
 
     if (mode == UserInterface::TIME_TEST) {
-
-        std::ofstream csvFile;
-        csvFile.open("results.csv", std::ios::app);
-
-        if (csvFile.is_open()) {
-            std::cout << "Can't open a file" << std::endl;
-        }
-
-        csvFile << cli->getWorkers() << ", " << cli->getCapacity() << ", " << cli->getUnitTimeCooking() << ", " << distrType << ", " << mt->getTimeMilli() << ", " << mt->getTimeMicro() << ", " << mt->getTimeNano() << std::endl;
-        csvFile.close();
-
-    } else {
-        
-        cli->printTotalTimeWait();
-        cli->printFeedingTimestamps();
-
-        std::cout << mt->getTimeMilli() << std::endl;
-        std::cout << mt->getTimeMicro() << std::endl;
-        std::cout << mt->getTimeNano() << std::endl;
+        std::cout << mt->getTimeMilli() << " ms" << std::endl;
+        std::cout << mt->getTimeMicro() << " us" << std::endl;
+        std::cout << mt->getTimeNano() << " ns" << std::endl;
     }
 
 }

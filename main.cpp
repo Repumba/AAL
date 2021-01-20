@@ -1,14 +1,29 @@
 #include <iostream>
+#include <fstream>
+#include <cstring>
 
-#include "cli.h"
-#include "mainAlgorithm.h"
+#include "include/cli.h"
+#include "include/mainAlgorithm.h"
+#include "include/MeasureTime.h"
 
 
-int main() {
+int main(int argc, char* argv[]) {
 
-    UserInterface * cli = new UserInterface();
-    cli->acquireData();
+
+    // std::cout << "Argv_1: " << argv[1] << std::endl;
+    // std::cout << "Argv_2: " << argv[2] << std::endl;
+
+    UserInterface * cli = new UserInterface(argc, argv);
+    MeasureTime * mt = new MeasureTime();
+    int nWorkers, mCap, tCook;
+    char distrType;
     
+    int * comingTimestamps;
+
+    auto mode = cli->getMode();
+
+    mt->startClock();
+
     Solver * solver = new Solver(
         cli->getWorkers(),
         cli->getCapacity(),
@@ -20,7 +35,28 @@ int main() {
     cli->setFeedingTimestamps(solver->getFeedingTimestamps());
     cli->setTotalTimeWait(solver->getTotalWaitingTime());
 
-    cli->printTotalTimeWait();
-    cli->printFeedingTimestamps();
+    mt->stopClock();
+
+    if (mode == UserInterface::TIME_TEST) {
+
+        std::ofstream csvFile;
+        csvFile.open("results.csv", std::ios::app);
+
+        if (csvFile.is_open()) {
+            std::cout << "Can't open a file" << std::endl;
+        }
+
+        csvFile << cli->getWorkers() << ", " << cli->getCapacity() << ", " << cli->getUnitTimeCooking() << ", " << distrType << ", " << mt->getTimeMilli() << ", " << mt->getTimeMicro() << ", " << mt->getTimeNano() << std::endl;
+        csvFile.close();
+
+    } else {
+        
+        cli->printTotalTimeWait();
+        cli->printFeedingTimestamps();
+
+        std::cout << mt->getTimeMilli() << std::endl;
+        std::cout << mt->getTimeMicro() << std::endl;
+        std::cout << mt->getTimeNano() << std::endl;
+    }
 
 }

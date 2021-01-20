@@ -1,5 +1,7 @@
 # AAL
 
+Autorzy: Tomasz Trzeciak, Anton Masiukevich
+
 Aby skompilować programy należy użyć:
 ```
 make
@@ -91,8 +93,6 @@ Aby skompilować programy należy użyć:
 Aby usunąć pliki testowe należy użyć:
 
 	make clean
-
--Tomek Trzeciak
 
 ## Instrukcja obsługi generatora danych wejściowych `generator.py`
 

@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
     int choice = atoi(argv[1]);
     if(choice == 1){ //procownicy przychodza do kuchni w odstepach wiekszych niz t, a dokladnie co t+1
         int n, m, t, p;
-        n = rand()% 1000 +1;
+        n = rand()% 1000000 +1;
         m = rand()%n +1;
         t = rand()%999 +1;
         int k = t+1;
@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
     if(choice == 2){ //w czasie t przychodzi do kuchni maksymalnie m pracownikow
         int n, m, t, p;
         do{
-            n = rand()% 1000 +1;
+            n = rand()% 1000000 +1;
             m = rand()%n +1;
             t = rand()%999 +1;
         }while(t<m); //potencjalnie bardzo dluga petla, ale male ryzyko wiecznego zapetlenia
@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
     if(choice == 3){ //w czasie t do kuchni przychodzi m+10 pracownikow
         int n, m, t, p;
         do{
-            n = rand()% 1000 +1;
+            n = rand()%1000000 +1;
             m = rand()%n +1;
             t = rand()%999 +1;
         }while(t < m+10); //potencjalnie bardzo dluga petla, ale male ryzyko wiecznego zapetlenia
@@ -69,7 +69,7 @@ int main(int argc, char* argv[])
         return 0;
     }
     if(choice == 4){ //test maksymalny
-        int n=1000, m=1, t=1000000;
+        int n=1000000, m=1, t=1000000;
         cout << n << " " << m << " " << t << endl;
         int p = 1;
         for(int i=0; i<n-1; ++i){
@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
             n=atoi(argv[2]);
         }
         else //choice==6, test calkowicie losowy
-            n = rand()%1000+1;
+            n = rand()%1000000+1;
 
         int m = rand()%n + 1;
         int t = rand()%1000000 +1;
